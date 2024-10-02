@@ -46,7 +46,6 @@ function block1() { //EXERCICIS 1.1: ARROW FUNCTIONS
     const timeoutGreet = setTimeout(() => {
         console.log("(1) Ex.5 part 2: Adéu " + person1.name + " :)");
     }, 3000);
-
 }
 
 function block2() { //EXERCICIS 1.2: OPERADOR TERNARI
@@ -101,6 +100,71 @@ function block2() { //EXERCICIS 1.2: OPERADOR TERNARI
     parOImpar(arrayNums2);
 }
 
-function block3(){ //EXERCICIS 1.3: CALLBACKS
+function block3() { //EXERCICIS 1.3: CALLBACKS
 
+    //================================ (3) Ex.1 ================================
+
+    const procesar = (num, callback) => {
+        callback(num);
+    }
+
+    procesar(9, (num) => {
+        console.log(`(3) Ex.1: El nombre processat és el ${num}.`);
+    });
+
+    //================================ (3) Ex.2 ================================
+
+    const suma = (num1, num2, callback) => {
+        const resultado = num1 + num2;
+        callback(resultado);
+    }
+
+    suma(2, 4, (resultado) => {
+        console.log(`(3) Ex.2: La suma de 2 i 4 és ${resultado}.`);
+    });
+
+    //================================ (3) Ex.3 ================================
+
+    const esperarISaludar = (nom, callback1) => {
+        setTimeout(() => {
+            callback1(nom);
+        }, 2000);
+    };
+
+    const callback1 = (nom) => {
+        console.log(`(3) Ex.3: Hellooo`, nom);
+    }
+
+    esperarISaludar("Dani", callback1);
+
+    //================================ (3) Ex.4 ================================
+
+    const arrayRandom = ["naranja", "300", "verde", "músico", "Estopa", "birra"];
+    console.log(`(3) Ex.4: Array random:`, arrayRandom);
+
+    const processarElements = (array, callback2) => {
+        for (let i = 0; i < array.length; i++) {
+            callback2(array[i]);
+        }
+    }
+
+    const callback2 = (nom) => {
+        console.log(nom);
+    }
+
+    processarElements(arrayRandom, callback2);
+
+    //================================ (3) Ex.5 ================================
+
+    const cadena = "supercalifragilisticoespialidoso";
+    console.log(`(3) Ex.5: Cadena escollida → ${cadena}`)
+
+    const processarCadena = (cadena, callback3) => {
+       callback3(cadena.toUpperCase());
+    }
+
+    processarCadena(cadena, (cadena) => {
+        console.log(`Cadena de minúscules a majúscules → ${cadena}`);
+    })
 }
+
