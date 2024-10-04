@@ -333,3 +333,56 @@ function block5() { //EXERCICIS 1.5: ARRAY TRANSFORMATIONS
     console.log("part 2: Hi ha algun número de l'array5 que sigui major que 10?", algunsMajorsQue10);
 }
 
+function block6() { //EXERCICIS 1.6: ARRAY LOOPS
+
+    //================================ [6] Ex.1 ================================
+
+    let noms = ['Anna', 'Bernat', 'Clara'];
+    console.log("array de noms →", noms);
+
+    noms.forEach((nom) => {
+        console.log("[6] Ex.1:", nom);
+    });
+
+    //================================ [6] Ex.2 ================================
+
+    for (const nom of noms) {
+        console.log("[6] Ex.2:", nom);
+    }
+
+    //================================ [6] Ex.3 ================================
+
+    let numeros = [1, 2, 3, 4, 5, 6];
+    console.log("array de números →", numeros);
+
+    const numerosPares = numeros.filter(num => num % 2 == 0);
+    console.log("[6] Ex.3: array amb els números parells →", numerosPares);
+
+    //================================ [6] Ex.4 ================================
+
+    let obj = { nom: "Ona", edat: 25, ciutat: 'Barcelona' };
+    console.table(obj);
+
+    for (const clau in obj) {
+        console.log(`[6] Ex.4: ${clau} → ${obj[clau]}`);
+    }
+
+    //================================ [6] Ex.5 ================================
+
+    console.log("array de números →", numeros);
+
+    for (const num of numeros) {
+        console.log("[6] Ex.5: fins el número 5 →", num);
+        if (num == 5) {
+            break;
+        }
+    }
+
+    //================================ [6] Ex.6 ================================
+
+    console.log("array de noms →", noms);
+
+    for (const [index, nom] of noms.entries()) {
+        console.log(`[6] Ex.6: Index ${index}: ${nom}`)
+    }
+}
