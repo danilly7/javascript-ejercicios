@@ -29,3 +29,9 @@ body {
     font-weight: bold;
     border: 1px solid lightseagreen;
 }
+
+@media only screen and (max-width:768px) {
+    .button-list button {
+        width: 20rem;
+    }
+}
