@@ -270,4 +270,66 @@ function block4() { //EXERCICIS 1.4: REST & SPREAD OPERATORS
 
 function block5() { //EXERCICIS 1.5: ARRAY TRANSFORMATIONS
 
+    //================================ [5] Ex.1 ================================
+
+    const array1 = [1, 2, 3, 4];
+    console.log("array1 →", array1);
+
+    const arrayQuadrat = array => array.map(num => num * num);
+
+    console.log("[5] Ex.1: array al quadrat →", arrayQuadrat(array1));
+
+    //================================ [5] Ex.2 ================================
+
+    const arrayParell = array => array.filter(num => num % 2 == 0);
+
+    console.log("[5] Ex.2: números parells del array →", arrayParell(array1));
+
+    //================================ [5] Ex.3 ================================
+
+    const array2 = [1, 10, 8, 11];
+    console.log("array2 →", array2);
+
+    const arrayMajorA10 = array => array.find(num => num > 10);
+
+    console.log("[5] Ex.3: el primer número major a 10 →", arrayMajorA10(array2));
+
+    //================================ [5] Ex.4 ================================
+
+    const array3 = [13, 7, 8, 21];
+    console.log("array3 →", array3);
+
+    const arraySuma = array => array.reduce((acc, num) => acc + num, 0);
+    console.log("[5] Ex.4: suma →", arraySuma(array3));
+
+    //================================ [5] Ex.5 ================================
+
+    const array4 = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
+    console.log("array4 →", array4);
+
+    /*const filtraMultiplicaISuma = (array) => {
+        const numsMajorsOIgualsDe10 = array.filter(num => num >= 10);
+        const multiplicarPer2 = numsMajorsOIgualsDe10.map(num => num * 2);
+        const suma = arraySuma(multiplicarPer2);
+        return suma;
+    };*/
+
+    const filtraMultiplicaISuma = array =>
+        array.filter(num => num >= 10)
+            .map(num => num * 2)
+            .reduce((acc, num) => acc + num, 0);
+
+    console.log("[5] Ex.5: Suma dels nombres filtrats i multiplicats per 2:", filtraMultiplicaISuma(array4));
+
+    //================================ [5] Ex.6 ================================
+
+    const array5 = [11, 12, 13, 14];
+    console.log("array5 →", array5);
+
+    const totsMajorsQue10 = array5.every(num => num > 10);
+    console.log("[5] Ex.6 part 1: Tots els números de l'array5 són majors que 10?", totsMajorsQue10);
+
+    const algunsMajorsQue10 = array5.some(num => num > 10);
+    console.log("part 2: Hi ha algun número de l'array5 que sigui major que 10?", algunsMajorsQue10);
 }
+
