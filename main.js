@@ -386,3 +386,105 @@ function block6() { //EXERCICIS 1.6: ARRAY LOOPS
         console.log(`[6] Ex.6: Index ${index}: ${nom}`)
     }
 }
+
+function block7() { //EXERCICIS 1.7: PROMISES & ASYNC/AWAIT
+
+    //================================ [7] Ex.1 ================================
+
+    const promesa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Hola, món!");
+        }, 2000);
+    });
+
+    //================================ [7] Ex.2 ================================
+
+    promesa.then((string) => {
+        console.log("[7] Ex.1 i 2:", string);
+    })
+
+    //================================ [7] Ex.3 ================================
+
+    const input = "Hola";
+
+    const promesa2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (input === "Hola") {
+                resolve("Hola");
+            } else {
+                reject("Error, no hola.");
+            }
+        }, 2000);
+    });
+
+    promesa2
+        .then((result) => {
+            console.log("[7] Ex.3:", result);
+        })
+        .catch((error) => {
+            console.error("[7] Ex.3: ", error);
+        });
+
+    //================================ [7] Ex.4 ================================
+
+    async function imprimirPromesa() {
+        const result = await promesa2;
+        console.log("[7] Ex.4:", result);
+    }
+
+    imprimirPromesa();
+
+    //================================ [7] Ex.5 ================================
+
+    async function imprimirPromesa2() {
+        try {
+            const result = await promesa2;
+            console.log("[7] Ex.5:", result);
+        } catch (error) {
+            console.error("[Error]", error);
+        }
+
+    }
+
+    imprimirPromesa2();
+
+    //================================ [7] Ex.6 ================================
+
+    const input2 = "Holaaa";
+    const input3 = "¿Qué tal?";
+
+    const promesaFinal1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (input2 === "Holaaa") {
+                resolve("Holaaa");
+                console.log("[7] Ex.6: PromiseFinal1 ok → Holaaa");
+            } else {
+                reject("Error, no hola.");
+                console.log("[7] Ex.6: PromiseFinal1 no ok → Error, no hola");
+            }
+        }, 2000);
+    });
+
+    const promesaFinal2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (input3 === "¿Qué tal?") {
+                resolve("¿Qué tal?");
+                console.log("[7] Ex.6: PromiseFinal2 ok → ¿Qué tal?");
+            } else {
+                reject("Error, no qué tal.");
+                console.log("[7] Ex.6: PromiseFinal2 no ok → Error, no qué tal");
+            }
+        }, 3000);
+    });
+
+    async function imprimirPromesasFinales() {
+        try {
+            const results = await Promise.all([promesaFinal1, promesaFinal2]);
+            console.log("[7] Ex.6: All promises ok →", results);
+        } catch (error) {
+            console.error("[7] Ex.6: Error not all promises ok →", error);
+        }
+    }
+
+    imprimirPromesasFinales();
+}
