@@ -1,4 +1,4 @@
-# SPRING 2. JAVASCRIPT - S2.1. Ejercicios básicos de JavaScript
+# SPRINT 2. JAVASCRIPT - S2.1. Ejercicios básicos de JavaScript
 ## Descripción del proyecto: 
 
 Este proyecto es un conjunto de actividades centrado en la práctica de funciones flecha, la aplicación del operador ternario en diferentes contextos, la comprensión de los callbacks, el uso de los operadores Rest y Spread, además de la familiarización con los bucles y las transformaciones en arrays.
