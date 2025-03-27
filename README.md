@@ -1,4 +1,4 @@
-# SPRINT 2. JAVASCRIPT - S2.1. Ejercicios básicos de JavaScript
+# JAVASCRIPT - Ejercicios básicos de JavaScript
 ## Descripción del proyecto: 
 
 Este proyecto es un conjunto de actividades centrado en la práctica de funciones flecha, la aplicación del operador ternario en diferentes contextos, la comprensión de los callbacks, el uso de los operadores Rest y Spread, además de la familiarización con los bucles y las transformaciones en arrays.
@@ -33,13 +33,13 @@ Para instalar este proyecto localmente:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/danilly7/s2.1.ExercicisBasicsJavaScript.git
+   git clone https://github.com/danilly7/javascript-ejercicios.git
    ``` 
    
 2. Navega a la carpeta del proyecto:
 
    ```bash
-   cd s2.1.ExercicisBasicsJavaScript
+   cd javascript-ejercicios
    ```
 
 3. Abrir el archivo HTML `index.html` y visualizar el proyecto en el navegador de preferencia.
